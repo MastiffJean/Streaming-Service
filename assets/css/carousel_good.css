@@ -1,0 +1,28 @@
+.card {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.carousel-inner {
+  text-align: center;
+}
+
+.carousel-item {
+  padding: 20px;
+  height: 520px;
+
+  line-height: 500px;
+}
+
+.carousel-item > img {
+
+  max-height : 480px;
+  max-width: 100%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    opacity: .1;
+}
+.carousel-control-next > img, .carousel-control-prev > img {
+    width: 50px;
+}

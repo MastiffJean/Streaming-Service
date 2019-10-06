@@ -1,0 +1,63 @@
+<?php
+  $this->load->view('templates/header.php');
+  $this->load->view('templates/nav.php');
+?>
+
+<head>
+  <link href="<?=base_url('assets/css/carousel_shop.css')?>" rel="stylesheet">
+</head>
+
+<main role="main">
+
+  <div class="jumbotron" style="padding: 2rem 1rem">
+    <div class="container">
+      <h1 id="shop_info" class="display-3">Отслеживаемые каналы</h1>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col">
+        <div id="stream_list" class="row">
+          <?php 
+            $data['users'] = $users;
+            $data['streams'] = $streams;
+            $this->load->view('pages/subscribers/subscribers_item', $data); 
+          ?>
+        </div>
+      </div>
+
+    </div>
+  </div> <!-- /container -->
+
+</main>
+
+<?php
+  $this->load->view('templates/footer.php');
+?>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js">
+</script>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    
+    $(document).on('click', '#delete_sub_item', function(event) {
+      event.preventDefault();
+      let sid = $(this).attr("value");
+      $.ajax({
+        url: "delete_subscribers_item",
+        data: "stream_id=" + sid,
+        type: "POST",
+        success: function() { 
+          $('#stream_list').load('update_sub_items');
+        },
+        error: function() {
+          alert("Ошибка!");
+        }
+      });
+
+    });
+  })
+</script>
