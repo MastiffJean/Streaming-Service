@@ -3,7 +3,7 @@ Streaming service Streams GO
 ###################
 
 Link:
-https://courseprojectgstore.000webhostapp.com/
+https://streamsgo.000webhostapp.com/
 
 Presentation: https://1drv.ms/p/s!AtcKmLrX7iGelQmLCrXQCo33Iv3T
 
